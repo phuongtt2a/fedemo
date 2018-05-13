@@ -10,22 +10,23 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class BookDetailComponent implements OnInit {
 
-  book = {};
+  category = {};
 
   constructor(private router: Router, private route: ActivatedRoute, private http: HttpClient) { }
 
   ngOnInit() {
-    this.getBookDetail(this.route.snapshot.params['id']);
+    this.getProductCategory(this.route.snapshot.params['id']);
   }
 
-  getBookDetail(id) {
-    this.http.get('/book/'+id).subscribe(data => {
-      this.book = data;
+  getProductCategory(id) {
+    this.http.get('/category/'+id).subscribe(data => {
+      this.category = data;
+      console.log( data);
     });
   }
 
-  deleteBook(id) {
-    this.http.delete('/book/'+id)
+  deleteProductCategory(id) {
+    this.http.delete('/category/'+id)
       .subscribe(res => {
           this.router.navigate(['/books']);
         }, (err) => {

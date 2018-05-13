@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 
 var book = require('./routes/book');
 var category = require('./routes/productcategory');
+var image = require('./routes/image');
 var app = express();
 
 var mongoose = require('mongoose');
@@ -21,6 +22,7 @@ app.use(express.static(path.join(__dirname, 'dist')));
 app.use('/books', express.static(path.join(__dirname, 'dist')));
 app.use('/book', book);
 app.use('/category', category);
+app.use('/image', image);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -38,6 +40,11 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+});
+
+app.use(function(req, res, next) {
+  req.headers['if-none-match'] = 'no-match-for-this';
+  next();    
 });
 
 module.exports = app;

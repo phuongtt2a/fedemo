@@ -1,6 +1,7 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-book-create',
@@ -10,15 +11,28 @@ import { HttpClient } from '@angular/common/http';
 })
 export class BookCreateComponent implements OnInit {
 
-  book = {};
+  productCategory = {};
+  form: FormGroup;
 
-  constructor(private http: HttpClient, private router: Router) { }
+  @ViewChild('fileInput') fileInput: ElementRef;
+
+  constructor(private http: HttpClient, private router: Router, private formBuilder: FormBuilder) { 
+    this.createForm();
+  }
+
+  createForm() {
+    this.form = this.formBuilder.group({
+      name: ['', Validators.required],
+      image: null
+    });
+  }
 
   ngOnInit() {
   }
 
-  saveBook() {
-    this.http.post('/book', this.book)
+  saveProductCategory() {
+    console.log('>>>>>>>>>>>>>>>>>>>>>>category');
+    this.http.post('/category', this.productCategory)
       .subscribe(res => {
           let id = res['_id'];
           this.router.navigate(['/book-details', id]);
@@ -27,5 +41,30 @@ export class BookCreateComponent implements OnInit {
         }
       );
   }
+
+  onFileChange(event) {
+    let reader = new FileReader();
+    if(event.target.files && event.target.files.length > 0) {
+      let file = event.target.files[0];
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        console.log('.......................................... 22222222');
+        console.log(this.productCategory);
+        this.productCategory['image'] = reader.result.split(',')[1];
+        console.log(this.productCategory);
+        this.form.get('image').setValue({
+          filename: file.name,
+          filetype: file.type,
+          value: reader.result.split(',')[1]
+        })
+      };
+    }
+  }
+
+  clearFile() {
+    this.form.get('image').setValue(null);
+    this.fileInput.nativeElement.value = '';
+  }
+
 
 }

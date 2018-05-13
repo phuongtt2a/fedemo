@@ -1,5 +1,12 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {DomSanitizer} from '@angular/platform-browser';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Accept':  'image/jpg'
+  })
+};
 
 @Component({
   selector: 'app-book',
@@ -9,22 +16,26 @@ import { HttpClient } from '@angular/common/http';
 })
 export class BookComponent implements OnInit {
 
-  books: any;
   categories: any;
+  images = {};
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private _DomSanitizationService: DomSanitizer) { }
 
   ngOnInit() {
-    this.http.get('/book').subscribe(data => {
-      console.log(data);
-      this.books = data;
-    });
-
     this.http.get('/category').subscribe(data => {
       console.log(data);
       this.categories = data;
+
+      // for (let category of this.categories) {
+      //   this.http.get('/image/' + category.imageUrl, httpOptions).subscribe(res => {
+      //     console.log('$$$$$$$$$$$$$$$$$');
+      //     console.log(res['data'].toString('base64'));
+      //     this.images[category.imageUrl] = this._DomSanitizationService.bypassSecurityTrustUrl("data:image/jpg;base64," + res['data'].toString('base64'));
+      //   })
+      // }
     });
 
   }
+
 
 }
