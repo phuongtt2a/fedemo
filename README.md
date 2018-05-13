@@ -5,9 +5,9 @@ To run locally:
 * Run `npm start`
 => http://localhost:3000/
 
-## MongoDB
+## Database - MongoDB
 
-Database name can be change in app.js (line 14). Currently, we are using "mean-angular5".
+Database name can be changed in app.js (line 14). Currently, we are using "mean-angular5".
 We have 2 collections (tables):
 1. category - to store all product categories
     - _id
@@ -19,3 +19,8 @@ We have 2 collections (tables):
         - data
         - contentType
     - caption
+
+### Current features
+1. Create a new product category (with UI)
+2. List all product categories
+3. Delete a selected product category
