@@ -1,3 +1,4 @@
+## How to
 To run locally:
 
 * Clone this repo
@@ -24,3 +25,7 @@ We have 2 collections (tables):
 1. Create a new product category (with UI)
 2. List all product categories
 3. Delete a selected product category
+
+### TODOs
+* Clean code - Remove all codes related to "Book", including database scripts, configuration...
+* Upgrade UI by using css & change the UX
