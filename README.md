@@ -22,10 +22,11 @@ We have 2 collections (tables):
     - caption
 
 ### Current features
-1. Create a new product category (with UI)
+1. Create a new product category. Notice that, currently we support JPEG images only.
 2. List all product categories
 3. Delete a selected product category
 
 ### TODOs
 * Clean code - Remove all codes related to "Book", including database scripts, configuration...
+* Support all types of images instead of JPEG only
 * Upgrade UI by using css & change the UX
