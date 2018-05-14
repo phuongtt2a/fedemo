@@ -31,7 +31,7 @@ export class BookCreateComponent implements OnInit {
   }
 
   saveProductCategory() {
-    this.http.post('/category', this.productCategory)
+    this.http.post('/api/category', this.productCategory)
       .subscribe(res => {
           //let id = res['_id'];
           //this.router.navigate(['/book-details', id]);

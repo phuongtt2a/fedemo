@@ -22,14 +22,14 @@ export class BookComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.http.get('/category').subscribe(data => {
+    this.http.get('/api/category').subscribe(data => {
       console.log(data);
       this.categories = (data as any[]);
     });
   }
 
   deleteProductCategory(id) {
-    this.http.delete('/category/'+id)
+    this.http.delete('/api/category/'+id)
       .subscribe(res => {
         this.categories = this.categories.filter(cat => cat._id !== id);
         // this.router.navigate(['/books']);

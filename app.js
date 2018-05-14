@@ -21,8 +21,8 @@ app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 app.use(express.static(path.join(__dirname, 'dist')));
 app.use('/books', express.static(path.join(__dirname, 'dist')));
 app.use('/book', book);
-app.use('/category', category);
-app.use('/image', image);
+app.use('/api/category', category);
+app.use('/api/image', image);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

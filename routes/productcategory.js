@@ -33,8 +33,7 @@ var fs = require('fs');
 
 /* GET ALL CATEGORY */
 router.get('/', function(req, res, next) {
-	  res.header("Access-Control-Allow-Origin", "*");
-  console.log("SERVER>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+	res.header("Access-Control-Allow-Origin", "*");
   ProductCategory.find({}).sort({order: 1}).exec(function (err, products) {
     if (err) return next(err);
     res.json(products);
