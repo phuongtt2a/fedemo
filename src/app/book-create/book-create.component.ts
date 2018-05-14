@@ -49,7 +49,6 @@ export class BookCreateComponent implements OnInit {
       reader.readAsDataURL(file);
       reader.onload = () => {
         this.productCategory['image'] = reader.result.split(',')[1];
-        console.log(this.productCategory);
         this.form.get('image').setValue({
           filename: file.name,
           filetype: file.type,
