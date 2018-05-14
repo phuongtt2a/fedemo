@@ -31,11 +31,11 @@ export class BookCreateComponent implements OnInit {
   }
 
   saveProductCategory() {
-    console.log('>>>>>>>>>>>>>>>>>>>>>>category');
     this.http.post('/category', this.productCategory)
       .subscribe(res => {
-          let id = res['_id'];
-          this.router.navigate(['/book-details', id]);
+          //let id = res['_id'];
+          //this.router.navigate(['/book-details', id]);
+          this.router.navigate(['/books']);
         }, (err) => {
           console.log(err);
         }
@@ -48,8 +48,6 @@ export class BookCreateComponent implements OnInit {
       let file = event.target.files[0];
       reader.readAsDataURL(file);
       reader.onload = () => {
-        console.log('.......................................... 22222222');
-        console.log(this.productCategory);
         this.productCategory['image'] = reader.result.split(',')[1];
         console.log(this.productCategory);
         this.form.get('image').setValue({
