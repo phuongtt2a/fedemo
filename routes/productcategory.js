@@ -6,12 +6,10 @@ var Image = require('../models/Image.js');
 
 var fs = require('fs');
 
-var imgPath = '/Users/phamdinhduyphuong/Downloads/Avatar/dd39be899aa095b1fcfbb4d214edbb0a.jpg';
-
-/* GET ALL CATEGORY */
-router.get('/', function(req, res, next) {
+// Code below to save the image from file system
 /*  
-  // save the image first
+  var imgPath = '/Users/phamdinhduyphuong/Downloads/Avatar/dd39be899aa095b1fcfbb4d214edbb0a.jpg';
+  
   let imageRecord = new Image();
   imageRecord.caption = 'Image of category';
   imageRecord.image.data = fs.readFileSync(imgPath);
@@ -32,6 +30,9 @@ router.get('/', function(req, res, next) {
     });
   });
 */
+
+/* GET ALL CATEGORY */
+router.get('/', function(req, res, next) {
   ProductCategory.find({}).sort({order: 1}).exec(function (err, products) {
     if (err) return next(err);
     res.json(products);
@@ -76,7 +77,6 @@ router.delete('/:id', function(req, res, next) {
       if (err) return next(err);
       res.json(prod);
     });
-    
   });
 });
 
