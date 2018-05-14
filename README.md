@@ -27,6 +27,7 @@ We have 2 collections (tables):
 3. Delete a selected product category
 
 ### TODOs
+* Implement new feature - Add products into a product category
 * Clean code - Remove all codes related to "Book", including database scripts, configuration...
 * Support all types of images instead of JPEG only
 * Upgrade UI by using css & change the UX. Consider using grid components to display data on the main page
