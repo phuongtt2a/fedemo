@@ -29,5 +29,8 @@ We have 2 collections (tables):
 ### TODOs
 * Clean code - Remove all codes related to "Book", including database scripts, configuration...
 * Support all types of images instead of JPEG only
-* Upgrade UI by using css & change the UX
+* Upgrade UI by using css & change the UX. Consider using grid components to display data on the main page
+* Authentication & Authorization
+* Apply a caching mechanism
+* Support search or filter functionality
 * ~~Cannot upload images with large sizes~~
