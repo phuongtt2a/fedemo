@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import {DomSanitizer} from '@angular/platform-browser';
+import { Router } from '@angular/router';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -16,26 +16,26 @@ const httpOptions = {
 })
 export class BookComponent implements OnInit {
 
-  categories: any;
-  images = {};
+  categories: any[] = [];
 
-  constructor(private http: HttpClient, private _DomSanitizationService: DomSanitizer) { }
+  constructor(private http: HttpClient, private router: Router) {
+  }
 
   ngOnInit() {
     this.http.get('/category').subscribe(data => {
       console.log(data);
-      this.categories = data;
-
-      // for (let category of this.categories) {
-      //   this.http.get('/image/' + category.imageUrl, httpOptions).subscribe(res => {
-      //     console.log('$$$$$$$$$$$$$$$$$');
-      //     console.log(res['data'].toString('base64'));
-      //     this.images[category.imageUrl] = this._DomSanitizationService.bypassSecurityTrustUrl("data:image/jpg;base64," + res['data'].toString('base64'));
-      //   })
-      // }
+      this.categories = (data as any[]);
     });
-
   }
 
-
+  deleteProductCategory(id) {
+    this.http.delete('/category/'+id)
+      .subscribe(res => {
+        this.categories = this.categories.filter(cat => cat._id !== id);
+        // this.router.navigate(['/books']);
+        }, (err) => {
+          console.log(err);
+        }
+      );
+  }
 }
