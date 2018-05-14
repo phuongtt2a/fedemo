@@ -28,6 +28,8 @@ We have 2 collections (tables):
 
 ### TODOs
 * Implement new feature - Add products into a product category
+    * When deleting a category -> delete all products which belong to it also
+    * Upload image to a file system or mongodb? consider the performance to load image in this case
 * Clean code - Remove all codes related to "Book", including database scripts, configuration...
 * Support all types of images instead of JPEG only
 * Upgrade UI by using css & change the UX. Consider using grid components to display data on the main page
