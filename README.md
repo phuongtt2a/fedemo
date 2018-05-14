@@ -21,6 +21,23 @@ We have 2 collections (tables):
         - contentType
     - caption
 
+## APIs
+### Server APIs
+1. [GET] /api/category
+    List all cateogories
+2. [GET] /api/category/{id}
+    Get category by id {id}    
+3. [POST] /api/category
+    Add new category
+4. [DELETE] /api/category/{id}
+    Delete category with id {id}
+
+### FE API
+1. /category
+    List all categories
+2. /category/new
+    Create new category
+
 ### Current features
 1. Create a new product category. Notice that, currently we support JPEG images only.
 2. List all product categories

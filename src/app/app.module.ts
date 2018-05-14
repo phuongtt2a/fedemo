@@ -12,9 +12,9 @@ import { BookEditComponent } from './book-edit/book-edit.component';
 
 const appRoutes: Routes = [
   {
-    path: 'books',
+    path: 'category',
     component: BookComponent,
-    data: { title: 'Book List' }
+    data: { title: 'Category List' }
   },
   {
     path: 'book-details/:id',
@@ -22,9 +22,9 @@ const appRoutes: Routes = [
     data: { title: 'Book Details' }
   },
   {
-    path: 'book-create',
+    path: 'category/new',
     component: BookCreateComponent,
-    data: { title: 'Create Book' }
+    data: { title: 'Create Category' }
   },
   {
     path: 'book-edit/:id',
@@ -32,7 +32,7 @@ const appRoutes: Routes = [
     data: { title: 'Edit Book' }
   },
   { path: '',
-    redirectTo: '/books',
+    redirectTo: '/category',
     pathMatch: 'full'
   }
 

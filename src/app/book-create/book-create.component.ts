@@ -35,7 +35,7 @@ export class BookCreateComponent implements OnInit {
       .subscribe(res => {
           //let id = res['_id'];
           //this.router.navigate(['/book-details', id]);
-          this.router.navigate(['/books']);
+          this.router.navigate(['/category']);
         }, (err) => {
           console.log(err);
         }
