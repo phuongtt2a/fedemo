@@ -30,4 +30,4 @@ We have 2 collections (tables):
 * Clean code - Remove all codes related to "Book", including database scripts, configuration...
 * Support all types of images instead of JPEG only
 * Upgrade UI by using css & change the UX
-* Cannot upload images with large sizes => FIXED
+* ~~Cannot upload images with large sizes~~
