@@ -15,9 +15,6 @@ export class CategoryDetailComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute, private http: HttpClient) { }
 
   ngOnInit() {
-    console.log('ngOnInit????????????????????????????????????');
-    console.log(this.route.snapshot.params['id']);
-    console.log('end.......');
     this.getProductCategory(this.route.snapshot.params['id']);
   }
 

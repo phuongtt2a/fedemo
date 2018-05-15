@@ -57,4 +57,5 @@ We have 2 collections (tables):
         * https://blog.risingstack.com/node-hero-node-js-authentication-passport-js/
 * Apply a caching mechanism
 * Support search or filter functionality
+* Routing issue - https://stackoverflow.com/questions/21067717/angularjs-and-express-routing-issue
 * ~~Cannot upload images with large sizes~~
