@@ -21,12 +21,23 @@ We have 2 collections (tables):
         - contentType
     - caption
 
-### Current features
+## APIs
+### Server APIs
+1. [GET] /api/category - List all cateogories
+2. [GET] /api/category/{id} - Get category by id {id}    
+3. [POST] /api/category - Add new category
+4. [DELETE] /api/category/{id} - Delete category with id {id}
+
+### Frontend
+1. /category - List all categories
+2. /category/new - Create new category
+
+## Current features
 1. Create a new product category. Notice that, currently we support JPEG images only.
 2. List all product categories
 3. Delete a selected product category
 
-### TODOs
+## TODOs
 * Implement new feature - Add products into a product category
     * When deleting a category -> delete all products which belong to it also
     * Upload image to a file system or mongodb? consider the performance to load image in this case
