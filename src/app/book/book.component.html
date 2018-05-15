@@ -18,17 +18,9 @@
         <td>{{ category._id }}</td>
         <td>{{ category.displayStr }}</td>
         <td>{{ category.order }}</td>
-<<<<<<< HEAD
-        <td><img src="/image/{{category.imageUrl}}" width="100"/></td>
-        <td><button class="btn btn-danger" type="button" (click)="deleteProductCategory(category._id)">DELETE</button></td>
-        <!--
-        <a [routerLink]="['/book-details', category._id]">Show Detail</a> | 
-        --> 
-=======
         <td><img src="/api/image/{{category.imageUrl}}" width="100"/></td>
         <td><a [routerLink]="['/book-details', category._id]">Show Detail</a> | <button class="btn btn-danger" type="button" (click)="deleteProductCategory(category._id)">DELETE</button></td>
 
->>>>>>> f89702a62c3bda66ba2cc65201fab42e4e071a9e
       </tr>
     </tbody>
   </table>
