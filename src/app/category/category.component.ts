@@ -9,12 +9,12 @@ const httpOptions = {
 };
 
 @Component({
-  selector: 'app-book',
-  templateUrl: './book.component.html',
-  styleUrls: ['./book.component.css'],
+  selector: 'app-category',
+  templateUrl: './category.component.html',
+  styleUrls: ['./category.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class BookComponent implements OnInit {
+export class CategoryComponent implements OnInit {
 
   categories: any[] = [];
 

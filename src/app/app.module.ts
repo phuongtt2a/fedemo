@@ -5,15 +5,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { BookComponent } from './book/book.component';
+import { CategoryComponent } from './category/category.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
-import { BookCreateComponent } from './book-create/book-create.component';
+import { CategoryCreateComponent } from './category-create/category-create.component';
 import { BookEditComponent } from './book-edit/book-edit.component';
 
 const appRoutes: Routes = [
   {
     path: 'category',
-    component: BookComponent,
+    component: CategoryComponent,
     data: { title: 'Category List' }
   },
   {
@@ -23,7 +23,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'category/new',
-    component: BookCreateComponent,
+    component: CategoryCreateComponent,
     data: { title: 'Create Category' }
   },
   {
@@ -40,9 +40,9 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    BookComponent,
+    CategoryComponent,
     BookDetailComponent,
-    BookCreateComponent,
+    CategoryCreateComponent,
     BookEditComponent
   ],
   imports: [

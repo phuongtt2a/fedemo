@@ -4,12 +4,12 @@ import { HttpClient } from '@angular/common/http';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
-  selector: 'app-book-create',
-  templateUrl: './book-create.component.html',
-  styleUrls: ['./book-create.component.css'],
+  selector: 'app-category-create',
+  templateUrl: './category-create.component.html',
+  styleUrls: ['./category-create.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class BookCreateComponent implements OnInit {
+export class CategoryCreateComponent implements OnInit {
 
   productCategory = {};
   form: FormGroup;
