@@ -2,12 +2,13 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
 var ProductCategory = require('../models/ProductCategory.js');
+var Product = require('../models/Product.js');
 var Image = require('../models/Image.js');
-
-var fs = require('fs');
 
 // Code below to save the image from file system
 /*  
+  var fs = require('fs');
+
   var imgPath = '/Users/phamdinhduyphuong/Downloads/Avatar/dd39be899aa095b1fcfbb4d214edbb0a.jpg';
   
   let imageRecord = new Image();
@@ -41,7 +42,6 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
-  console.log(req.body);
 
   let imageRecord = new Image();
   imageRecord.caption = 'Image of category';
@@ -82,9 +82,16 @@ router.delete('/:id', function(req, res, next) {
 });
 
 router.get('/:id', function(req, res, next) {
-  ProductCategory.findById(req.params.id, function (err, post) {
+  ProductCategory.findById(req.params.id, function (err, category) {
     if (err) return next(err);
-    res.json(post);
+    res.json(category);
+  });
+});
+
+router.get('/:id/product', function(req, res, next) {
+  Product.find({categoryId: eq.params.id}, function (err, products) {
+    if (err) return next(err);
+    res.json(products);
   });
 });
 

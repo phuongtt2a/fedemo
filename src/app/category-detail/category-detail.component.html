@@ -9,9 +9,34 @@
     <dd><img src="/api/image/{{category.imageUrl}}" width="100"/></dd>
   </dl>
 </div>
+<!--
 <div class="row">
   <div class="col-md-12">
     <a [routerLink]="['/book-edit', category._id]" class="btn btn-success">EDIT</a>
     <button class="btn btn-danger" type="button" (click)="deleteProductCategory(category._id)">DELETE</button>
   </div>
 </div>
+-->
+<h1>Add new product</h1>
+  <div class="row">
+    <div class="col-md-6">
+      <form (ngSubmit)="saveProduct(category._id)" #productForm="ngForm">
+        <div class="form-group">
+          <label for="name">Product Name</label>
+          <input type="text" class="form-control" [(ngModel)]="product.displayStr" name="displayStr" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Order</label>
+          <input type="text" class="form-control" [(ngModel)]="product.order" name="order" required>
+        </div>
+        <div class="form-group">
+          <label for="image">Image</label>
+          <input type="file" id="image" (change)="onFileChange($event)" #fileInput>
+          <button type="button" class="btn btn-sm btn-default" (click)="clearFile()">Clear file</button>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-success" [disabled]="!productForm.form.valid">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
