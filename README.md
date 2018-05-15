@@ -45,6 +45,16 @@ We have 2 collections (tables):
 * Support all types of images instead of JPEG only
 * Upgrade UI by using css & change the UX. Consider using grid components to display data on the main page
 * Authentication & Authorization
+    * With passport.js
+        * https://www.djamware.com/post/58bd823080aca7585c808ebf/nodejs-expressjs-mongoosejs-and-passportjs-authentication
+        * https://github.com/didinj/node-express-passport-mongoose-auth
+        * https://github.com/manjeshpv/passport-local-express4-mongoose-example
+        * https://appdividend.com/2017/12/21/simple-nodejs-authentication-system-using-passport/
+        * http://mherman.org/blog/2015/01/31/local-authentication-with-passport-and-express-4/#.WvqizaSFNpg
+        * https://github.com/mjhea0/passport-local-express4
+        * https://scotch.io/tutorials/easy-node-authentication-setup-and-local
+        * https://github.com/scotch-io/easy-node-authentication
+        * https://blog.risingstack.com/node-hero-node-js-authentication-passport-js/
 * Apply a caching mechanism
 * Support search or filter functionality
 * ~~Cannot upload images with large sizes~~
