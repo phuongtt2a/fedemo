@@ -1,10 +1,12 @@
 <div class="container">
   <h1>{{ category.displayStr }}</h1>
   <dl class="list">
-    <dt>Product category xxxxxx</dt>
+    <dt>Product category</dt>
     <dd>{{ category.displayStr }}</dd>
     <dt>Order</dt>
     <dd>{{ category.order }}</dd>
+    <dt>Image</dt>
+    <dd><img src="/api/image/{{category.imageUrl}}" width="100"/></dd>
   </dl>
 </div>
 <div class="row">

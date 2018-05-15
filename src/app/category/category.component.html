@@ -19,10 +19,7 @@
         <td>{{ category.displayStr }}</td>
         <td>{{ category.order }}</td>
         <td><img src="/api/image/{{category.imageUrl}}" width="100"/></td>
-        <td><button class="btn btn-danger" type="button" (click)="deleteProductCategory(category._id)">DELETE</button></td>
-        <!--
-        <td><a [routerLink]="['/book-details', category._id]">Show Detail</a> | <button class="btn btn-danger" type="button" (click)="deleteProductCategory(category._id)">DELETE</button></td>
-        -->
+        <td><a [routerLink]="['/category/detail', category._id]">Detail</a> | <button class="btn btn-danger" type="button" (click)="deleteProductCategory(category._id)">DELETE</button></td>
       </tr>
     </tbody>
   </table>

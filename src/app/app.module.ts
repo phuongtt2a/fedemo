@@ -6,7 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { CategoryComponent } from './category/category.component';
-import { BookDetailComponent } from './book-detail/book-detail.component';
+import { CategoryDetailComponent } from './category-detail/category-detail.component';
 import { CategoryCreateComponent } from './category-create/category-create.component';
 import { BookEditComponent } from './book-edit/book-edit.component';
 
@@ -17,9 +17,9 @@ const appRoutes: Routes = [
     data: { title: 'Category List' }
   },
   {
-    path: 'book-details/:id',
-    component: BookDetailComponent,
-    data: { title: 'Book Details' }
+    path: 'category/detail/:id',
+    component: CategoryDetailComponent,
+    data: { title: 'Category Details' }
   },
   {
     path: 'category/new',
@@ -41,7 +41,7 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     CategoryComponent,
-    BookDetailComponent,
+    CategoryDetailComponent,
     CategoryCreateComponent,
     BookEditComponent
   ],
