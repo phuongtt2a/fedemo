@@ -70,6 +70,9 @@ router.post('/', function(req, res, next) {
 router.delete('/:id', function(req, res, next) {
   ProductCategory.findById(req.params.id).exec(function (err, product) {
     if (err) return next(err);
+    //----------------------------------------------------
+    //TODO delete all products belong to the category also
+    //----------------------------------------------------
     Image.findByIdAndRemove(product.imageUrl, function(err, imageId) {
       if (err) return next(err);
       console.log('Image is removed');
