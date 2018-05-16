@@ -8,6 +8,7 @@ var book = require('./routes/book');
 var category = require('./routes/productcategory');
 var image = require('./routes/image');
 var product = require('./routes/product');
+var order = require('./routes/order');
 var app = express();
 
 var mongoose = require('mongoose');
@@ -26,6 +27,7 @@ app.use('/book', book);
 app.use('/api/category', category);
 app.use('/api/image', image);
 app.use('/api/product', product);
+app.use('/order',order);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
