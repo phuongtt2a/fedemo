@@ -17,6 +17,7 @@ export class CategoryDetailComponent implements OnInit {
 
   category = {};
   product = {};
+  products: any[] = [];
 
   constructor(private router: Router, private route: ActivatedRoute, private http: HttpClient, private formBuilder: FormBuilder) { 
     this.createForm();
@@ -31,11 +32,18 @@ export class CategoryDetailComponent implements OnInit {
 
   ngOnInit() {
     this.getProductCategory(this.route.snapshot.params['id']);
+    this.getProducts(this.route.snapshot.params['id']);
   }
 
   getProductCategory(id) {
     this.http.get('api/category/'+id).subscribe(data => {
       this.category = data;
+    });
+  }
+
+  getProducts(categoryId) {
+    this.http.get('api/product?category='+categoryId).subscribe(data => {
+      this.products = (data as any[]);
     });
   }
 
@@ -52,7 +60,7 @@ export class CategoryDetailComponent implements OnInit {
   saveProduct(id) {
     this.product['categoryId'] = id;
     this.http.post('/api/product', this.product)
-      .subscribe(res => {
+      .subscribe(res => { 
           //let id = res['_id'];
           //this.router.navigate(['/book-details', id]);
           this.router.navigate(['/category']);

@@ -88,11 +88,4 @@ router.get('/:id', function(req, res, next) {
   });
 });
 
-router.get('/:id/product', function(req, res, next) {
-  Product.find({categoryId: eq.params.id}, function (err, products) {
-    if (err) return next(err);
-    res.json(products);
-  });
-});
-
 module.exports = router;

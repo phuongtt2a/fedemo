@@ -40,3 +40,28 @@
       </form>
     </div>
   </div>
+
+  <div>
+    <h1>Products List</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Product</th>
+          <th>Order</th>
+          <th>Image</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{ product._id }}</td>
+          <td>{{ product.displayStr }}</td>
+          <td>{{ product.order }}</td>
+          <td><img src="/api/image/{{product.imageUrl}}" width="100"/></td>
+          <!--
+          <td><a [routerLink]="['/category/detail', category._id]">Detail</a> | <button class="btn btn-danger" type="button" (click)="deleteProductCategory(category._id)">DELETE</button></td>
+          -->
+        </tr>
+      </tbody>
+    </table>
+  </div>

@@ -6,10 +6,7 @@ var Product = require('../models/Product.js');
 var Image = require('../models/Image.js');
 
 router.post('/', function(req, res, next) {
-  console.log('categoryId ' + req.body.categoryId);
   ProductCategory.findById(req.body.categoryId, function (err, category) {
-    console.log('????????????????????????');
-    console.log(category);
     let cat = category;
     if (err) return next(err);
     
@@ -34,12 +31,17 @@ router.post('/', function(req, res, next) {
         console.log('The product is saved ' + product);
         res.json(product);
       });
-   
     });
-  
   });
 });
 
+router.get('/', function(req, res, next) {
+  var categoryId = req.param('category');
+  Product.find({categoryId: categoryId}).sort({order: 1}).exec(function (err, products) {
+    if (err) return next(err);
+    res.json(products);
+  });
+});
 
 
 module.exports = router;
