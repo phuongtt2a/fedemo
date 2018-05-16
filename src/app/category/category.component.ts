@@ -17,14 +17,19 @@ const httpOptions = {
 export class CategoryComponent implements OnInit {
 
   categories: any[] = [];
+  productCounts = {};
 
   constructor(private http: HttpClient, private router: Router) {
   }
 
   ngOnInit() {
     this.http.get('/api/category').subscribe(data => {
-      console.log(data);
       this.categories = (data as any[]);
+      for (let category of this.categories) {
+        this.http.get('/api/category/products/' + category._id).subscribe(data => {
+          this.productCounts[category._id]=data;
+        });  
+      }
     });
   }
 

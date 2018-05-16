@@ -11,6 +11,7 @@
         <th>Category</th>
         <th>Order</th>
         <th>Image</th>
+        <th>Products</th>
       </tr>
     </thead>
     <tbody>
@@ -19,6 +20,7 @@
         <td>{{ category.displayStr }}</td>
         <td>{{ category.order }}</td>
         <td><img src="/api/image/{{category.imageUrl}}" width="100"/></td>
+        <td>{{productCounts[category._id]}}</td>
         <td><a [routerLink]="['/category/detail', category._id]">Detail</a> | <button class="btn btn-danger" type="button" (click)="deleteProductCategory(category._id)">DELETE</button></td>
       </tr>
     </tbody>

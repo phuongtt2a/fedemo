@@ -88,4 +88,11 @@ router.get('/:id', function(req, res, next) {
   });
 });
 
+router.get('/products/:id', function(req, res, next) {
+  Product.count({categoryId: req.params.id}, function (err, result) {
+    if (err) return next(err);
+    res.json(result);
+  });
+});
+
 module.exports = router;
