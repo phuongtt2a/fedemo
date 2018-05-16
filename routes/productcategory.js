@@ -43,12 +43,21 @@ router.get('/', function(req, res, next) {
 
 router.post('/', function(req, res, next) {
 
+  let imageRecord = new Image();
+  imageRecord.caption = 'Image of category';
+  imageRecord.image.data = req.body.image;
+  imageRecord.image.data = Buffer(req.body.image.toString('Base64'), 'base64');
+  imageRecord.image.contentType = 'image/jpg';
 
+  imageRecord.save(function(err, img) {
+    if (err) throw err;
+    console.log('Image is saved. ' + img);
 
     let productRecord = new ProductCategory();
     productRecord._id = new mongoose.Types.ObjectId();
     productRecord.displayStr = req.body.displayStr;
-
+    productRecord.order = req.body.order;
+    productRecord.imageUrl = img;
     productRecord.save(function(err, product) {
       if (err) throw err;
       console.log('The product is saved ' + product);
@@ -56,7 +65,7 @@ router.post('/', function(req, res, next) {
     });
  
   });
-
+});
 
 router.delete('/:id', function(req, res, next) {
   ProductCategory.findById(req.params.id).exec(function (err, product) {
