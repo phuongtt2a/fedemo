@@ -20,13 +20,15 @@ We have 2 collections (tables):
         - data
         - contentType
     - caption
-
+3. order - to store all orders from customer
 ## APIs
 ### Server APIs
 1. [GET] /api/category - List all cateogories
 2. [GET] /api/category/{id} - Get category by id {id}    
 3. [POST] /api/category - Add new category
 4. [DELETE] /api/category/{id} - Delete category with id {id}
+5. [GET]/order - get all orders
+6. [POST]/order - add new order
 
 ### Frontend
 1. /category - List all categories
@@ -59,3 +61,5 @@ We have 2 collections (tables):
 * Support search or filter functionality
 * Routing issue - https://stackoverflow.com/questions/21067717/angularjs-and-express-routing-issue
 * ~~Cannot upload images with large sizes~~
+
+*(from Cong) send mail to administrator when user order
