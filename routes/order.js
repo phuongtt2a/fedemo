@@ -15,7 +15,6 @@ router.get('/', function(req, res, next) {
 
 router.post('/', function(req, res, next) {
 
-    res.header("Access-Control-Allow-Origin", "*");
 
     let imageRecord = new Image();
     imageRecord.caption = 'sample of Image provived by customer.';
