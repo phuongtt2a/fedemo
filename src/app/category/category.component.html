@@ -54,7 +54,7 @@
     
     <div class="container-fluid">
         <h3>Product category list
-            <a [routerLink]="['/category/new']" class="btn btn-primary waves-light" mdbWavesEffect>
+            <a [routerLink]="['/category/new']" class="btn btn-primary btn-sm waves-light" mdbWavesEffect>
               <i class="fa fa-plus" aria-hidden="true"></i>
             </a>
           </h3>
@@ -76,7 +76,7 @@
                 <td>{{ category.order }}</td>
                 <td><img src="/api/image/{{category.imageUrl}}" width="100"/></td>
                 <td>{{productCounts[category._id]}}</td>
-                <td><a [routerLink]="['/category/detail', category._id]">Detail</a> | <button type="button" class="btn btn-danger waves-light" (click)="deleteProductCategory(category._id)" mdbWavesEffect><i class="fa fa-times" aria-hidden="true"></i></button></td>
+                <td><a [routerLink]="['/category/detail', category._id]">Detail</a> | <button type="button" class="btn btn-danger btn-sm waves-light" (click)="deleteProductCategory(category._id)" mdbWavesEffect><i class="fa fa-times" aria-hidden="true"></i></button></td>
               </tr>
             </tbody>
           </table>
