@@ -80,75 +80,11 @@
               </tr>
             </tbody>
           </table>
-        
-    
     </div>
     
 </main>
-
-
-<!--  
-<div class="container">
-  <h1>Product category list
-    <a [routerLink]="['/category/new']" class="btn btn-primary waves-light" mdbWavesEffect>
-      <i class="fa fa-plus" aria-hidden="true"></i>
-    </a>
-  </h1>
-  
-  <table class="table">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Category</th>
-        <th>Order</th>
-        <th>Image</th>
-        <th>Products</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let category of categories">
-        <td>{{ category._id }}</td>
-        <td>{{ category.displayStr }}</td>
-        <td>{{ category.order }}</td>
-        <td><img src="/api/image/{{category.imageUrl}}" width="100"/></td>
-        <td>{{productCounts[category._id]}}</td>
-        <td><a [routerLink]="['/category/detail', category._id]">Detail</a> | <button type="button" class="btn btn-danger waves-light" (click)="deleteProductCategory(category._id)" mdbWavesEffect><i class="fa fa-times" aria-hidden="true"></i></button></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<div class="container"> 
-    <div class="row">
-        <div class="col-4">.col-4</div>
-        <div class="col-4">.col-4</div>
-        <div class="col-4">.col-4</div>
+<footer class="page-footer font-small blue">
+    <div class="footer-copyright py-3 text-center">
+        Stay POSITIVE, work hard, make it happen
     </div>
-    
-    <div class="row">
-        <div class="col-sm-4">.col-sm-4</div>
-        <div class="col-sm-4">.col-sm-4</div>
-        <div class="col-sm-4">.col-sm-4</div>
-    </div>
-    
-    <div class="row">
-        <div class="col-md-4">.col-md-4</div>
-        <div class="col-md-4">.col-md-4</div>
-        <div class="col-md-4">.col-md-4</div>
-    </div>
-    
-    <div class="row">
-        <div class="col-lg-4">.col-lg-4</div>
-        <div class="col-lg-4">.col-lg-4</div>
-        <div class="col-lg-4">.col-lg-4</div>
-    </div>
-    
-    <div class="row">
-        <div class="col-xl-4">.col-xl-4</div>
-        <div class="col-xl-4">.col-xl-4</div>
-        <div class="col-xl-4">.col-xl-4</div>
-    </div>
-</div>
--->
-
-
+</footer>
