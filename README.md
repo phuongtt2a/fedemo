@@ -47,6 +47,7 @@ We have 2 collections (tables):
 * Support all types of images instead of JPEG only
 * Upgrade UI by using css & change the UX. Consider using grid components to display data on the main page
     * https://www.npmjs.com/package/angular-bootstrap-md
+    * Navbar https://mdbootstrap.com/components/navbar/
 * Authentication & Authorization
     * With passport.js
         * https://www.djamware.com/post/58bd823080aca7585c808ebf/nodejs-expressjs-mongoosejs-and-passportjs-authentication
